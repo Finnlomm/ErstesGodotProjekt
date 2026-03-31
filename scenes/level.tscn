@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtmxg5nwhsaqs"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_evuum"]
+[ext_resource type="Texture2D" uid="uid://pyyks2hk2fcn" path="res://assets/Backgrounds/darkPurple.png" id="1_ks4kh"]
+[ext_resource type="PackedScene" uid="uid://cex568c6nms1" path="res://scenes/player.tscn" id="2_emnr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybbgn"]
+size = Vector2(60, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ckks"]
+size = Vector2(1185, 45)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_evuum")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(578, 327)
+scale = Vector2(4.602, 2.637)
+texture = ExtResource("1_ks4kh")
+
+[node name="Player" parent="." instance=ExtResource("2_emnr6")]
+position = Vector2(38, 226)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+position = Vector2(324, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-357, 354)
+shape = SubResource("RectangleShape2D_ybbgn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(863, 352)
+shape = SubResource("RectangleShape2D_ybbgn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(254.5, 4.5)
+shape = SubResource("RectangleShape2D_3ckks")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(254.5, 700.5)
+shape = SubResource("RectangleShape2D_3ckks")
+
+[node name="MeteorTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Meteors" type="Node2D" parent="."]
+
+[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
