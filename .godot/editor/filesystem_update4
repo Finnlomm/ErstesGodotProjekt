@@ -1,0 +1,5 @@
+res://scenes/laser.tscn
+res://scenes/level.gd
+res://scenes/meteor.gd
+res://scenes/meteor.tscn
+res://scenes/player_image.gd
