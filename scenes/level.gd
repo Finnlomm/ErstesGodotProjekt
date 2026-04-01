@@ -1,11 +1,18 @@
 extends Node2D
 
-#1. load the scene
-var meteor_scene: PackedScene = load("res://scenes/meteor.tscn")
+# 1. Lade die Meteor-Szene
+var meteor_scene: PackedScene = preload("res://scenes/meteor.tscn")
+var laser_scene: PackedScene = preload("res://scenes/laser.tscn")
+
+func _ready():
+	pass  # Timer startet automatisch, da 'Autostart' aktiviert ist
 
 func _on_meteor_timer_timeout() -> void:
-	# 2.create an instance
 	var meteor = meteor_scene.instantiate()
-
-	#3. attach the node to the scene
 	$Meteors.add_child(meteor)
+
+
+func _on_player_laser(pos) -> void:
+	var laser = laser_scene.instantiate()
+	$Lasers.add_child(laser)
+	laser.position = pos

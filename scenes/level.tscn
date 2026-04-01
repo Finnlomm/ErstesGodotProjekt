@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtmxg5nwhsaqs"]
+[gd_scene format=3 uid="uid://dtmxg5nwhsaqs"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_evuum"]
+[ext_resource type="Script" uid="uid://bl7gkqugmrtjo" path="res://scenes/level.gd" id="1_evuum"]
 [ext_resource type="Texture2D" uid="uid://pyyks2hk2fcn" path="res://assets/Backgrounds/darkPurple.png" id="1_ks4kh"]
 [ext_resource type="PackedScene" uid="uid://cex568c6nms1" path="res://scenes/player.tscn" id="2_emnr6"]
 
@@ -10,41 +10,46 @@ size = Vector2(60, 647)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ckks"]
 size = Vector2(1185, 45)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1648725561]
 script = ExtResource("1_evuum")
 
-[node name="BG" type="Sprite2D" parent="."]
-position = Vector2(578, 327)
+[node name="BG" type="Sprite2D" parent="." unique_id=1398923959]
+position = Vector2(578.00006, 327)
 scale = Vector2(4.602, 2.637)
 texture = ExtResource("1_ks4kh")
 
-[node name="Player" parent="." instance=ExtResource("2_emnr6")]
+[node name="Player" parent="." unique_id=1897280640 instance=ExtResource("2_emnr6")]
 position = Vector2(38, 226)
 
-[node name="Borders" type="Node2D" parent="."]
+[node name="Borders" type="Node2D" parent="." unique_id=159955447]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=415818324]
 position = Vector2(324, -29)
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1388223567]
 position = Vector2(-357, 354)
 shape = SubResource("RectangleShape2D_ybbgn")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=236851619]
 position = Vector2(863, 352)
 shape = SubResource("RectangleShape2D_ybbgn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=434681219]
 position = Vector2(254.5, 4.5)
 shape = SubResource("RectangleShape2D_3ckks")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=953124131]
 position = Vector2(254.5, 700.5)
 shape = SubResource("RectangleShape2D_3ckks")
 
-[node name="MeteorTimer" type="Timer" parent="."]
+[node name="MeteorTimer" type="Timer" parent="." unique_id=521218367]
+wait_time = 0.384
 autostart = true
 
-[node name="Meteors" type="Node2D" parent="."]
+[node name="Meteors" type="Node2D" parent="." unique_id=1040502526]
 
+[node name="Lasers" type="Node2D" parent="." unique_id=510464786]
+
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
