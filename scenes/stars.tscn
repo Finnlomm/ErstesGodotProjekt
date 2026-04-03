@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dc5n8hw4wsr47"]
+
+[ext_resource type="Texture2D" uid="uid://c7ua72y134w2i" path="res://assets/PNG/Effects/star1.png" id="2_b87vc"]
+[ext_resource type="Texture2D" uid="uid://t3jf2x28br1v" path="res://assets/PNG/Effects/star2.png" id="3_uxhsd"]
+[ext_resource type="Texture2D" uid="uid://cnjkxrkre1bw5" path="res://assets/PNG/Effects/star3.png" id="4_qov51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1rx8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b87vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uxhsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qov51")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Stars" type="Node2D" unique_id=1630739650]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1019438938]
+position = Vector2(469.5, 71.25)
+scale = Vector2(1.1250006, 0.9791669)
+sprite_frames = SubResource("SpriteFrames_t1rx8")
+frame_progress = 0.43545112

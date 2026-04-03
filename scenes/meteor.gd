@@ -19,7 +19,7 @@ func _ready():
 		$Meteor.texture = meteor_sprites[rng.randi() % meteor_sprites.size()]
 
 	# Zufällige Geschwindigkeit
-	speed = rng.randf_range(min_speed, max_speed)
+	speed = rng.randf_range(float(min_speed), float(max_speed))
 
 	# Zufällige Richtung (leicht schräg nach unten)
 	var random_angle = rng.randf_range(-0.5, 0.5)
@@ -37,5 +37,6 @@ func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 	rotation_degrees += rotation_speed * delta
 
-func _on_body_entered() -> void:
+func _on_body_entered(body: Node2D) -> void:
+	print("Kollision mit: " + body.name)
 	queue_free()
