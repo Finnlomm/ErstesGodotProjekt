@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bjq2xxtfn8tnc"]
+[gd_scene load_steps=10 format=3 uid="uid://bjq2xxtfn8tnc"]
 
 [ext_resource type="Texture2D" uid="uid://dbiul40733whf" path="res://assets/PNG/Meteors/meteorBrown_big1.png" id="1_bw14h"]
-[ext_resource type="Script" uid="uid://drk3rgc3itrfx" path="res://scenes/meteor.gd" id="1_trr4e"]
+[ext_resource type="Script" path="res://scenes/meteor.gd" id="1_trr4e"]
 [ext_resource type="Texture2D" uid="uid://d080ums7io3as" path="res://assets/PNG/Meteors/meteorBrown_big2.png" id="3_stakr"]
 [ext_resource type="Texture2D" uid="uid://dhq8lwrcwk6yr" path="res://assets/PNG/Meteors/meteorBrown_big4.png" id="4_88cbt"]
 [ext_resource type="Texture2D" uid="uid://cr0f31uswexce" path="res://assets/PNG/Meteors/meteorGrey_big2.png" id="5_wsx3o"]
@@ -12,18 +12,18 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bttyy"]
 radius = 40.1123
 
-[node name="Meteor" type="Area2D" unique_id=1708423668]
+[node name="Meteor" type="Area2D"]
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_trr4e")
 meteor_sprites = Array[Texture2D]([ExtResource("1_bw14h"), ExtResource("3_stakr"), ExtResource("4_88cbt"), ExtResource("5_wsx3o"), ExtResource("6_wgl6k"), ExtResource("7_ux51p"), ExtResource("8_qov7x")])
 
-[node name="Meteor" type="Sprite2D" parent="." unique_id=247429176]
+[node name="Meteor" type="Sprite2D" parent="."]
 position = Vector2(4, 6)
 scale = Vector2(0.767327, 1.02381)
 texture = ExtResource("1_bw14h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579110260]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 4)
 shape = SubResource("CircleShape2D_bttyy")
 

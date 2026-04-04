@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://41qfggayue3e"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_fo3oi"]
+[ext_resource type="FontFile" uid="uid://bk4ybolmxmtt6" path="res://assets/Bonus/kenvector_future.ttf" id="1_s6cfq"]
+[ext_resource type="FontFile" uid="uid://bn8unl7kati2j" path="res://assets/Bonus/kenvector_future_thin.ttf" id="2_7lnbu"]
+
+[node name="GameOverScreen" type="Node2D"]
+script = ExtResource("1_fo3oi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.180392, 0.247059, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_s6cfq")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7lnbu")
+theme_override_font_sizes/font_size = 25
+text = "Your Score: 0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -69.0
+offset_right = 159.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 9
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7lnbu")
+theme_override_font_sizes/font_size = 20
+text = "Press Space to start again"
+horizontal_alignment = 1

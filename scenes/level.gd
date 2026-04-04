@@ -4,8 +4,13 @@ extends Node2D
 var meteor_scene: PackedScene = preload("res://scenes/meteor.tscn")
 var laser_scene: PackedScene = preload("res://scenes/laser.tscn")
 
+var health = 3
+
 func _ready():
 	pass  # Timer startet automatisch, da 'Autostart' aktiviert ist
+	
+	#set up health ui
+	get_tree().call_group("ui", "set_health", health)
 	
 	#stars
 	var size := get_viewport().get_visible_rect().size
@@ -24,9 +29,22 @@ func _ready():
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	$Meteors.add_child(meteor)
+	
+	# connect the signal
+	meteor.connect("collision", on_meteor_collision)
 
+func on_meteor_collision():
+	health -= 1
+	get_tree().call_group("ui", "set_health", health)
+	
+	if health <= 0:
+		call_deferred("_load_game_over")
+	
 
 func _on_player_laser(pos) -> void:
 	var laser = laser_scene.instantiate()
 	$Lasers.add_child(laser)
 	laser.position = pos
+
+func _load_game_over() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")

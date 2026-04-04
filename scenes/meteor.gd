@@ -10,6 +10,8 @@ var speed := 0
 var direction := Vector2.DOWN
 var rotation_speed := 0.0
 
+signal collision()
+
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -31,12 +33,13 @@ func _ready():
 	# Startposition: Zufällige X-Position, aber oberhalb des Bildschirms
 	var viewport_rect = get_viewport().get_visible_rect()
 	position.x = rng.randi_range(0, int(viewport_rect.size.x))
-	position.y = viewport_rect.position.y - 50  # 50 Pixel oberhalb des sichtbaren Bereichs
+	position.y = viewport_rect.position.y - 50  
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 	rotation_degrees += rotation_speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Kollision mit: " + body.name)
-	queue_free()
+	collision.emit()
+	call_deferred("queue_free")
+	
