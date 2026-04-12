@@ -16,8 +16,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Test"
 run/main_scene="res://scenes/level.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player_lasers=""
 
 [input]
 
@@ -58,3 +62,4 @@ Ui_accept={
 2d_physics/layer_2="Meteor"
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="Laser"
+2d_physics/layer_5="Enemies"

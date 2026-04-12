@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtmxg5nwhsaqs"]
+[gd_scene format=3 uid="uid://dtmxg5nwhsaqs"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_evuum"]
+[ext_resource type="Script" uid="uid://bl7gkqugmrtjo" path="res://scenes/level.gd" id="1_evuum"]
 [ext_resource type="Texture2D" uid="uid://pyyks2hk2fcn" path="res://assets/Backgrounds/darkPurple.png" id="1_ks4kh"]
 [ext_resource type="PackedScene" uid="uid://cex568c6nms1" path="res://scenes/player.tscn" id="2_emnr6"]
 [ext_resource type="PackedScene" uid="uid://dc5n8hw4wsr47" path="res://scenes/stars.tscn" id="4_mx8sn"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://t3jf2x28br1v" path="res://assets/PNG/Effects/star2.png" id="6_8c41q"]
 [ext_resource type="Texture2D" uid="uid://cnjkxrkre1bw5" path="res://assets/PNG/Effects/star3.png" id="7_olg7q"]
 [ext_resource type="FontFile" uid="uid://bk4ybolmxmtt6" path="res://assets/Bonus/kenvector_future.ttf" id="8_kkxpg"]
-[ext_resource type="Script" path="res://scenes/ui.gd" id="8_uunvb"]
+[ext_resource type="Script" uid="uid://ly4hj4yqppla" path="res://scenes/ui.gd" id="8_uunvb"]
 [ext_resource type="Texture2D" uid="uid://36evgopyjyrj" path="res://assets/PNG/UI/playerLife1_red.png" id="9_luiaw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_klq6b"]
@@ -34,219 +34,225 @@ size = Vector2(60, 647)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ckks"]
 size = Vector2(1185, 45)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=55931455]
 script = ExtResource("1_evuum")
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="." unique_id=2110012464]
 position = Vector2(578, 327)
 scale = Vector2(4.602, 2.637)
 texture = ExtResource("1_ks4kh")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." instance=ExtResource("2_emnr6")]
+[node name="Player" parent="." unique_id=1561530419 instance=ExtResource("2_emnr6")]
 position = Vector2(581, 332)
 
-[node name="Stars" parent="." instance=ExtResource("4_mx8sn")]
+[node name="Stars" parent="." unique_id=962926967 instance=ExtResource("4_mx8sn")]
 metadata/_edit_lock_ = true
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Stars" unique_id=802116366]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.847866
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Stars" unique_id=2107868271]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Stars" unique_id=1557649985]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Stars" unique_id=1290835326]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Stars" unique_id=1129223235]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Stars" unique_id=1728382472]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Stars" unique_id=1446279807]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Stars" unique_id=493501618]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Stars" unique_id=2020418781]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Stars" unique_id=1930542471]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Stars" unique_id=1601616724]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Stars" unique_id=1227758506]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Stars" unique_id=1047657485]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D15" type="AnimatedSprite2D" parent="Stars" unique_id=621445132]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="Stars" unique_id=1499251787]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="Stars" unique_id=10820918]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="Stars" unique_id=155226827]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="Stars" unique_id=209041922]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="Stars" unique_id=1363517387]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="Stars" unique_id=304171041]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="Stars" unique_id=667302270]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="Stars" unique_id=273726745]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="Stars"]
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="Stars" unique_id=567982301]
 position = Vector2(160.375, 56)
 scale = Vector2(0.610001, 0.75)
 sprite_frames = SubResource("SpriteFrames_klq6b")
 autoplay = "default"
 frame_progress = 0.237951
 
-[node name="Borders" type="Node2D" parent="."]
+[node name="Borders" type="Node2D" parent="." unique_id=383720024]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=584899055]
 position = Vector2(324, -29)
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1995295518]
 position = Vector2(-357, 354)
 shape = SubResource("RectangleShape2D_ybbgn")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1097826119]
 position = Vector2(863, 352)
 shape = SubResource("RectangleShape2D_ybbgn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1218722163]
 position = Vector2(254.5, 4.5)
 shape = SubResource("RectangleShape2D_3ckks")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=976563903]
 position = Vector2(254.5, 700.5)
 shape = SubResource("RectangleShape2D_3ckks")
 
-[node name="MeteorTimer" type="Timer" parent="."]
+[node name="MeteorTimer" type="Timer" parent="." unique_id=1068548850]
 wait_time = 0.384
 autostart = true
 
-[node name="Meteors" type="Node2D" parent="."]
+[node name="DifficultyTimer" type="Timer" parent="." unique_id=90361748]
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=1015725147]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=845944437]
+
+[node name="Meteors" type="Node2D" parent="." unique_id=1515042923]
 metadata/_edit_lock_ = true
 
-[node name="Lasers" type="Node2D" parent="."]
+[node name="Lasers" type="Node2D" parent="." unique_id=12144035]
 metadata/_edit_lock_ = true
 
-[node name="UI" type="CanvasLayer" parent="." groups=["ui"]]
+[node name="UI" type="CanvasLayer" parent="." unique_id=488129798 groups=["ui"]]
 script = ExtResource("8_uunvb")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1703736923]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -256,7 +262,7 @@ offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 20
 
-[node name="Label" type="Label" parent="UI/MarginContainer"]
+[node name="Label" type="Label" parent="UI/MarginContainer" unique_id=1836942857]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("8_kkxpg")
@@ -264,7 +270,7 @@ theme_override_font_sizes/font_size = 50
 text = "Biu bi"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI" unique_id=54957727]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -277,29 +283,31 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer2" unique_id=616540845]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer" unique_id=148204732]
 layout_mode = 2
 texture = ExtResource("9_luiaw")
 
-[node name="TextureRect2" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer" unique_id=979180743]
 layout_mode = 2
 texture = ExtResource("9_luiaw")
 
-[node name="TextureRect3" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer" unique_id=1356138815]
 layout_mode = 2
 texture = ExtResource("9_luiaw")
 
-[node name="TextureRect4" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer" unique_id=640103020]
 layout_mode = 2
 texture = ExtResource("9_luiaw")
 
-[node name="TextureRect5" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="UI/MarginContainer2/HBoxContainer" unique_id=204326923]
 layout_mode = 2
 texture = ExtResource("9_luiaw")
 
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
+[connection signal="timeout" from="DifficultyTimer" to="." method="_on_difficulty_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

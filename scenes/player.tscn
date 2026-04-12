@@ -1,24 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cex568c6nms1"]
+[gd_scene format=3 uid="uid://cex568c6nms1"]
 
 [ext_resource type="Texture2D" uid="uid://d21lgu2o23g8a" path="res://assets/PNG/playerShip1_blue.png" id="1_h4a48"]
-[ext_resource type="Script" path="res://scenes/player_image.gd" id="2_hijp0"]
+[ext_resource type="Script" uid="uid://dj4j4vteiv6j" path="res://scenes/player_image.gd" id="2_hijp0"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1767525538]
 position = Vector2(1, 0)
-collision_mask = 6
+collision_mask = 22
 script = ExtResource("2_hijp0")
 
-[node name="PlayerImage" type="Sprite2D" parent="."]
+[node name="PlayerImage" type="Sprite2D" parent="." unique_id=719521902]
 position = Vector2(2, -2)
 texture = ExtResource("1_h4a48")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1923506267]
 position = Vector2(1, 0)
 polygon = PackedVector2Array(9, -40, -8, -40, -11, -14, -34, -1, -44, -10, -50, -10, -47, 22, -13, 25, -7, 35, 8, 36, 16, 24, 48, 23, 51, -9, 45, -9, 37, 0, 14, -13)
 
-[node name="LaserStartPosition" type="Marker2D" parent="."]
+[node name="LaserStartPosition" type="Marker2D" parent="." unique_id=767193563]
 position = Vector2(0, -64)
 
-[node name="LaserCooldownTimer" type="Timer" parent="."]
+[node name="LaserCooldownTimer" type="Timer" parent="." unique_id=1163698703]
 wait_time = 0.5
 one_shot = true
